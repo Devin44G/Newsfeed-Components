@@ -112,6 +112,41 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-// function articleTemplate(articles) {
-//   let div = document.createElement('div')
-// }
+const ARTICLES = document.querySelector('.articles');
+
+function articleTemplate(article, i) {
+// Creating & Appending Div
+  let div = document.createElement('div');
+      div.classList.add('article');
+      ARTICLES.append(div);
+  // ARTICLES.append(div);
+
+// Creating & Appending H2
+  let title = document.createElement('h2');
+      title.textContent = article[i].title;
+      div.append(title);
+
+// Creating & Appending Date
+  let date = document.createElement('p');
+      date.classList.add('date');
+      date.textContent = article[i].date;
+      div.append(date);
+
+// Creating & Appending Article Paragraphs
+  let p1 = document.createElement('p');
+      p1.textContent = article[i].firstParagraph;
+      div.append(p1);
+
+  let p2 = document.createElement('p');
+      p2.textContent = article[i].secondParagraph;
+      div.append(p2);
+
+  let p3 = document.createElement('p');
+      p3.textContent = article[i].thirdParagraph;
+      div.append(p3);
+}
+
+articleTemplate(data, 0);
+articleTemplate(data, 1);
+articleTemplate(data, 2);
+articleTemplate(data, 3);
