@@ -48,6 +48,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: 1s;
 }
 .article h2 {
   font-size: 28px;
@@ -73,8 +74,12 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .hide {
+  display: none;
+}
 .article-open {
   height: 400px;
+  transition: 1s;
 }
 .menu-button {
   position: absolute;
@@ -82,17 +87,17 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: rgba(129, 199, 132, 0.8);
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  transition: 1s;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
@@ -103,7 +108,8 @@
   text-align: center;
 }
 .menu--open {
-  display: block;
+  transition: 1s;
+  left: 0;
 }
 html,
 body {

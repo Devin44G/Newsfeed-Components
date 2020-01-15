@@ -210,11 +210,23 @@ function articleTemplate(article) {
 // EXPAND BUTTON
   let span = document.createElement('span');
       span.classList.add('expandButton');
-      span.textContent = 'Open Article'
+      span.textContent = 'Read Article';
+
+  let span2 = document.createElement('span');
+      span2.classList.add('expandButton', 'hide');
+      span2.textContent = 'Close Article';
       div.append(span);
+      div.append(span2);
     /* EVENT LISTENER */
       span.addEventListener('click', () => {
           div.classList.toggle('article-open');
+          span.classList.toggle('hide');
+          span2.classList.toggle('hide');
+      });
+      span2.addEventListener('click', () => {
+          div.classList.toggle('article-open');
+          span.classList.toggle('hide');
+          span2.classList.toggle('hide');
       });
 }
 

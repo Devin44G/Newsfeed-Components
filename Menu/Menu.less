@@ -1,3 +1,5 @@
+@menuColor: #81C784;
+
 .menu-button {
   position: absolute;
   left: 20px;
@@ -5,16 +7,16 @@
 }
 
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: rgb(@menuColor, .8);
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
+  transition: 1s;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 
@@ -26,5 +28,6 @@
 }
 
 .menu--open {
-  display: block;
+  transition: 1s;
+  left: 0;
 }
