@@ -85,6 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Devin\'s Amazing Title',
+    date: 'Dec 29th, 2049',
+    firstParagraph: `Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
+    Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
+    Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor?  `,
+
+    thirdParagraph: `Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
+    Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `
   }
 ];
 
@@ -112,41 +127,97 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// ARTICLES FUNCTION AND RENDERING
 const ARTICLES = document.querySelector('.articles');
 
-function articleTemplate(article, i) {
+// function articleTemplate(article, i) {
+// // Creating & Appending Div
+//   let div = document.createElement('div');
+//       div.classList.add('article');
+//       ARTICLES.append(div);
+//
+// // Creating & Appending H2
+//   let title = document.createElement('h2');
+//       title.textContent = article[i].title;
+//       div.append(title);
+//
+// // Creating & Appending Date
+//   let date = document.createElement('p');
+//       date.classList.add('date');
+//       date.textContent = article[i].date;
+//       div.append(date);
+//
+// // Creating & Appending Article Paragraphs
+//   let p1 = document.createElement('p');
+//       p1.textContent = article[i].firstParagraph;
+//       div.append(p1);
+//
+//   let p2 = document.createElement('p');
+//       p2.textContent = article[i].secondParagraph;
+//       div.append(p2);
+//
+//   let p3 = document.createElement('p');
+//       p3.textContent = article[i].thirdParagraph;
+//       div.append(p3);
+//
+// // EXPAND BUTTON
+//   let span = document.createElement('span');
+//       span.classList.add('expandButton');
+//       span.textContent = 'Open Article'
+//       div.append(span);
+//     /* EVENT LISTENER */
+//       span.addEventListener('click', (e) => {
+//           div.classList.toggle('article-open');
+//       });
+// }
+
+// articleTemplate(data, 0);
+// articleTemplate(data, 1);
+// articleTemplate(data, 2);
+// articleTemplate(data, 3);
+
+function articleTemplate(article) {
 // Creating & Appending Div
   let div = document.createElement('div');
       div.classList.add('article');
       ARTICLES.append(div);
-  // ARTICLES.append(div);
 
 // Creating & Appending H2
   let title = document.createElement('h2');
-      title.textContent = article[i].title;
+      title.textContent = article.title;
       div.append(title);
 
 // Creating & Appending Date
   let date = document.createElement('p');
       date.classList.add('date');
-      date.textContent = article[i].date;
+      date.textContent = article.date;
       div.append(date);
 
 // Creating & Appending Article Paragraphs
   let p1 = document.createElement('p');
-      p1.textContent = article[i].firstParagraph;
+      p1.textContent = article.firstParagraph;
       div.append(p1);
 
   let p2 = document.createElement('p');
-      p2.textContent = article[i].secondParagraph;
+      p2.textContent = article.secondParagraph;
       div.append(p2);
 
   let p3 = document.createElement('p');
-      p3.textContent = article[i].thirdParagraph;
+      p3.textContent = article.thirdParagraph;
       div.append(p3);
+
+// EXPAND BUTTON
+  let span = document.createElement('span');
+      span.classList.add('expandButton');
+      span.textContent = 'Open Article'
+      div.append(span);
+    /* EVENT LISTENER */
+      span.addEventListener('click', () => {
+          div.classList.toggle('article-open');
+      });
 }
 
-articleTemplate(data, 0);
-articleTemplate(data, 1);
-articleTemplate(data, 2);
-articleTemplate(data, 3);
+// articleTemplate(data);
+
+data.map( arr => articleTemplate(arr) );
