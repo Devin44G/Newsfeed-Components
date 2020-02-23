@@ -1,5 +1,4 @@
 /* This is the data we will be using to create our article components */
-/* Look over this data, then proceed to line 91*/
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -103,79 +102,10 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
-
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-
-  Hint: You will need to use createElement more than once here!
-
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
 
 // ARTICLES FUNCTION AND RENDERING
 const ARTICLES = document.querySelector('.articles');
-
-// function articleTemplate(article, i) {
-// // Creating & Appending Div
-//   let div = document.createElement('div');
-//       div.classList.add('article');
-//       ARTICLES.append(div);
-//
-// // Creating & Appending H2
-//   let title = document.createElement('h2');
-//       title.textContent = article[i].title;
-//       div.append(title);
-//
-// // Creating & Appending Date
-//   let date = document.createElement('p');
-//       date.classList.add('date');
-//       date.textContent = article[i].date;
-//       div.append(date);
-//
-// // Creating & Appending Article Paragraphs
-//   let p1 = document.createElement('p');
-//       p1.textContent = article[i].firstParagraph;
-//       div.append(p1);
-//
-//   let p2 = document.createElement('p');
-//       p2.textContent = article[i].secondParagraph;
-//       div.append(p2);
-//
-//   let p3 = document.createElement('p');
-//       p3.textContent = article[i].thirdParagraph;
-//       div.append(p3);
-//
-// // EXPAND BUTTON
-//   let span = document.createElement('span');
-//       span.classList.add('expandButton');
-//       span.textContent = 'Open Article'
-//       div.append(span);
-//     /* EVENT LISTENER */
-//       span.addEventListener('click', (e) => {
-//           div.classList.toggle('article-open');
-//       });
-// }
-
-// articleTemplate(data, 0);
-// articleTemplate(data, 1);
-// articleTemplate(data, 2);
-// articleTemplate(data, 3);
 
 function articleTemplate(article) {
 // Creating & Appending Div
@@ -230,6 +160,50 @@ function articleTemplate(article) {
       });
 }
 
-// articleTemplate(data);
-
 data.map( arr => articleTemplate(arr) );
+
+// function articleTemplate(article, i) {  <-- FUNCTION NEEDING TO BE CALLED FOR EACH NEW ENTRY (NOT VERY RE-USABLE)
+// // Creating & Appending Div
+//   let div = document.createElement('div');
+//       div.classList.add('article');
+//       ARTICLES.append(div);
+//
+// // Creating & Appending H2
+//   let title = document.createElement('h2');
+//       title.textContent = article[i].title;
+//       div.append(title);
+//
+// // Creating & Appending Date
+//   let date = document.createElement('p');
+//       date.classList.add('date');
+//       date.textContent = article[i].date;
+//       div.append(date);
+//
+// // Creating & Appending Article Paragraphs
+//   let p1 = document.createElement('p');
+//       p1.textContent = article[i].firstParagraph;
+//       div.append(p1);
+//
+//   let p2 = document.createElement('p');
+//       p2.textContent = article[i].secondParagraph;
+//       div.append(p2);
+//
+//   let p3 = document.createElement('p');
+//       p3.textContent = article[i].thirdParagraph;
+//       div.append(p3);
+//
+// // EXPAND BUTTON
+//   let span = document.createElement('span');
+//       span.classList.add('expandButton');
+//       span.textContent = 'Open Article'
+//       div.append(span);
+//     /* EVENT LISTENER */
+//       span.addEventListener('click', (e) => {
+//           div.classList.toggle('article-open');
+//       });
+// }
+
+// articleTemplate(data, 0);
+// articleTemplate(data, 1);
+// articleTemplate(data, 2);
+// articleTemplate(data, 3);
