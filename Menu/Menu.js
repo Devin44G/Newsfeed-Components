@@ -50,8 +50,6 @@ function hamburgerMenu(arr) {
         list.textContent = item;
         menuList.appendChild(list);
   });
-
-  return menuDiv;
 }
 
 hamburgerMenu(menuItems);
